@@ -4,3 +4,8 @@ This Project is a chatting robot built by PyTorch.
 ## Model and Algorithm
 1. Seq2Seq
 2. Viterbi
+
+## How to run
+1. enter src repo
+2. python run_chatbot.py (This will train the model, and save model parameters to data repo)
+3. after trainning, python evaluate.py to enter the chatbot interface
