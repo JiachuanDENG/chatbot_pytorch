@@ -91,28 +91,7 @@ def train(input_variable,target_variable,encoder,decoder,encoder_optimizer,\
     decoder_optimizer.step()
     
     return loss.data[0]/target_length
-            
-
-
-def asMinutes(s):
-    m = math.floor(s / 60)
-    s -= m * 60
-    return '%dm %ds' % (m, s)
-
-
-def timeSince(since, percent):
-    now = time.time()
-    s = now - since
-    es = s / (percent)
-    rs = es - s
-    return '%s (- %s)' % (asMinutes(s), asMinutes(rs))
-
-def showPlot(points):
-    plt.figure()
-    fig,ax=plt.subplots()
-    loc=ticker.MultipleLocator(base=0.2)
-    ax.yaxis.set_major_locator(loc)
-    plt.plot(points)       
+                  
 
 
 
@@ -150,7 +129,7 @@ def trainIters(encoder,decoder,n_iters,print_every=1000,plot_every=100,save_ever
 				torch.save(decoder.state_dict(),parameterPath+'/chatbotDeparametersTrain.pkl') 
 				torch.save(encoder.state_dict(),parameterPath+'/chatbotEnparametersTrain.pkl') 
             
-    showPlot(plot_losses)
+ 
             
 if __name__ == '__main__':
 		vocab,pairs=data.prepareData('Cornel Corpus',True)
